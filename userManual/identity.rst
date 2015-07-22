@@ -386,47 +386,47 @@ David, Tony, Frank; you have another operation group for operating the VMs, whic
 infrastructure group has permissions to manage VMs' lifecycle while the operation group can only use VMs by accessing their consoles.
 In addition, you as the manager have all API permissions of your team's account(ops-team). To create such an organization:
 
-**Create the account *ops-team***
+**Create the account *ops-team***::
 
     >>>CreateAccount name=ops-team password=password
 
-    .. note:: make sure you login as an admin account to create the account
+.. note:: make sure you login as an admin account to create the account
 
-**Login using the account *ops-team***
+**Login using the account *ops-team***::
 
     >>>LogInByAccount accountName=ops-team password=password
 
-**Create users**
+**Create users**::
 
     >>>CreateUser name=david password=password
 
 repeat the step to create all users (tony, frank, lucy, arhbi, jeff, mgr)
 
-**Create groups**
+**Create groups**::
 
     >>>CreateUserGroup name=infra
 
 repeat the step to create another group(ops)
 
-**Add users to groups**
+**Add users to groups**::
 
     >>>AddUserToGroup userUuid=d7646ae8af2140c0a3ccef2ad8da816d groupUuid=92c523a43651442489f8d2d598c7c3da
 
-    .. note:: The userUuid and groupUuid are printed on screen when you create users and groups
+.. note:: The userUuid and groupUuid are printed on screen when you create users and groups
 
 repeat the step to add users into proper groups. infra group(david, tony, frank), ops group(lucy, arhbi, jeff).
 
 **Create polices**
 
-create the first policy allowing to call all VM related APIs:
+create the first policy allowing to call all VM related APIs::
 
     >>>CreatePolicy name=vm-management statements='[{"actions":["instance:.*"], "effect":"Allow"}]'
 
-create the second policy only allowing to access VM's console:
+create the second policy only allowing to access VM's console::
 
     >>>CreatePolicy name=vm-console statements='[{"actions":["instance:APIRequestConsoleAccessMsg"], "effect":"Allow"}]'
 
-create the third policy allowing all APIs:
+create the third policy allowing all APIs::
 
     >>>CreatePolicy name=all statements='[{"actions":[".*"], "effect":"Allow"}]'
 
@@ -436,23 +436,23 @@ create the third policy allowing all APIs:
 
 **Attach policies to groups**
 
-attach the policy *vm-management* to the infrastructure group:
+attach the policy *vm-management* to the infrastructure group::
 
     >>>AttachPolicyToUserGroup groupUuid=92c523a43651442489f8d2d598c7c3da policyUuid=afb3bfbb911a42e0a662286728e49891
 
-attach the policy *vm-console* to the operation group:
+attach the policy *vm-console* to the operation group::
 
     >>>AttachPolicyToUserGroup groupUuid=0939fc6f772d44d6a8f9d45c89c2a716 policyUuid=3bddf41e2ba6469881a65287879e5d58
 
-    .. note:: The policyUuid and groupUuid are printed on screen when you create groups and policies
+.. note:: The policyUuid and groupUuid are printed on screen when you create groups and policies
 
 **Attach policies to user manager(mgr)**
 
-attach the policy *all* to the manager(user: mgr)
+attach the policy *all* to the manager(user: mgr)::
 
     >>>AttachPolicyToUser userUuid=d55c5fba4d1b4533961db9952dc15b00 policyUuid=36c27e8ff05c4780bf6d2fa65700f22e
 
-    .. note:: The policyUuid and userUuid are printed on screen when you create the policy and the user
+.. note:: The policyUuid and userUuid are printed on screen when you create the policy and the user
 
 Now your organization is created successfully, your team members can use user credentials to login.
 
@@ -1103,6 +1103,8 @@ Reference
 Admin-only APIs
 ===============
 
+::
+
 QueryGlobalConfig
 GetGlobalConfig
 UpdateGlobalConfig
@@ -1187,6 +1189,8 @@ AddSftpBackupStorage
 
 Non-admin APIs
 ==============
+
+::
 
 UpdateVmInstance
 GetVmAttachableL3Network
@@ -1334,7 +1338,7 @@ Default Quotas
 ==============
 
 .. list-table::
-   :widths: 20 40 15 15
+   :widths: 20 40 20 20
    :header-rows: 1
 
    * - Name
