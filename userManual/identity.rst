@@ -506,6 +506,12 @@ An account can share resources to other accounts. This is particularly useful in
 can pre-defined some templates (e.g. images, instance offerings, disk offerings, l3 networks) so non-admin accounts(usually
 registered by customers) can use those templates to create VMs. See API :ref:`ShareResource <share resources>`.
 
+Resources can be shared to specified accounts or all accounts. When the API :ref:`ShareResource <share resources>` is called
+with the parameter *toPublic* set to true, the resources specified in *resourceUuids* are shared to all accounts, otherwise
+they are shared to accounts specified in *accountUuids*. When you revoke the shared resources by the API :ref:`RevokeSharing <revoke sharing>`,
+you can specify *accountUuids* to revoke resources from certain accounts, or can set *toPublic* to true to revoke resources that have
+been shared to all accounts.
+
 .. note:: In this version as the concept *role* has not been supported, other accounts can only read shared resources.
           That is to say, other accounts can query shared resources and use them (e.g. use images to create VMs) but cannot
           perform operations on them, for example, other accounts cannot delete a shared image.
@@ -723,8 +729,8 @@ Parameters
      -
      - 0.8
 
-Attach Polices to Users
-=======================
+Attach Polices to Groups
+========================
 
 An account can use AttachPolicyToUserGroup to attach a policy to a group. For example::
 
@@ -1110,6 +1116,60 @@ Parameters
      - - true
        - false
      - 0.8
+
+.. _revoke sharing:
+
+Revoke Shared Resources
+=======================
+
+An account can use RevokeResourceSharing to revoke shared resources from accounts. For example::
+
+    RevokeResourceSharing accountUuids=bb0e50fe0cfa4ec1af1835f9c210ae8e resourceUuids=b0662d80cc4945f8abaf6d1096da9eb5,d55c5fba4d1b4533961db9952dc15b00
+
+::
+
+    RevokeResourceSharing all=true accountUuids=bb0e50fe0cfa4ec1af1835f9c210ae8e
+
+::
+
+    RevokeResourceSharing resourceUuids=b0662d80cc4945f8abaf6d1096da9eb5 toPublic=true
+
+Parameters
+----------
+
+.. list-table::
+   :widths: 20 40 10 20 10
+   :header-rows: 1
+
+   * - Name
+     - Description
+     - Optional
+     - Choices
+     - Since
+   * - **accountUuids**
+     - the accounts from which the shared resources are revoked. When field *all* is set, this field is ignored,
+       as the resources will be revoked from all accounts to which the resources have been shared.
+     - true
+     -
+     - 0.6
+   * - **resourceUuids**
+     - resources to be revoked from accounts
+     -
+     -
+     - 0.6
+   * - **all**
+     - if set, the resources will be revoked from all accounts to which the resources have been shared.
+     - true
+     - - true
+       - false
+     - 0.6
+   * - **toPublic**
+     - if the resources are shared with 'toPublic = true' when calling ShareResource, this field must be also set
+       to true when revoking.
+     - true
+     - - true
+       - false
+     - 0.6
 
 Query Accounts
 ==============
