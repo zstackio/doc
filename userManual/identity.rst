@@ -496,7 +496,7 @@ Admin Account
 After installing ZStack, an admin account(account name: admin, password: password) is created by default. Administrators can
 use this account to create admin users which will have unlimited permissions just like the admin account, in order
 to allow different administrators to use own credentials to login. The password of the admin account can be changed
-by the API *ResetAccountPassword*.
+by the API *UpdateAccount*.
 
 ----------------
 Shared Resources
@@ -852,9 +852,9 @@ Parameters
 Reset Account Password
 ======================
 
-An account can use UpdateAccountPassword to reset its password. For example::
+An account can use UpdateAccount to reset its password. For example::
 
-    >>>UpdateAccountPassword password=password
+    >>>UpdateAccount password=password
 
 Parameters
 ----------
@@ -884,9 +884,9 @@ Parameters
 Reset User Password
 ===================
 
-An account or a user can use UpdateUserPassword to reset the password. For example::
+An account or a user can use UpdateUser to reset the password. For example::
 
-    >>>UpdateUserPassword password=password
+    >>>UpdateUser password=password
 
 Parameters
 ----------
@@ -1515,7 +1515,7 @@ Non-admin APIs
     AttachPolicyToUserGroup
     RemoveUserFromGroup
     AttachPolicyToUser
-    ResetUserPassword
+    UpdateUser
     AddUserToGroup
     QueryQuota
     ShareResource
@@ -1527,7 +1527,7 @@ Non-admin APIs
     QueryUser
     DeletePolicy
     RevokeResourceSharing
-    ResetAccountPassword
+    UpdateAccount
     DeleteUser
     DeleteUserGroup
     CreatePolicy
@@ -1690,7 +1690,7 @@ API Identities
 
     DestroyVmInstance: instance:APIDestroyVmInstanceMsg
 
-    ResetUserPassword: identity:APIResetUserPasswordMsg
+    UpdateUser: identity:APIUpdateUserMsg
 
     QueryNetworkServiceL3NetworkRef: l3Network:read, l3Network:APIQueryNetworkServiceL3NetworkRefMsg
 
