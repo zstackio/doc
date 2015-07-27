@@ -852,9 +852,9 @@ Parameters
 Reset Account Password
 ======================
 
-An account can use ResetAccountPassword to reset its password. For example::
+An account can use UpdateAccountPassword to reset its password. For example::
 
-    >>>ResetAccountPassword password=password
+    >>>UpdateAccountPassword password=password
 
 Parameters
 ----------
@@ -884,9 +884,9 @@ Parameters
 Reset User Password
 ===================
 
-An account or a user can use ResetUserPassword to reset the password. For example::
+An account or a user can use UpdateUserPassword to reset the password. For example::
 
-    >>>ResetUserPassword password=password
+    >>>UpdateUserPassword password=password
 
 Parameters
 ----------
