@@ -62,4 +62,5 @@ Chapters
     userManual/eip
     userManual/volumeSnapshot
     userManual/identity
+    userManual/lb
 
