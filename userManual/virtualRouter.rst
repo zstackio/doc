@@ -729,3 +729,8 @@ a virtual router VM on the guest L3 network.
      - the uuid of guest L3 network
      - guestL3Network::dd56c5c209a74b669b3fe6115a611d57
      - 0.6
+
+For example::
+
+    CreateSystemTag resourceType=InstanceOfferingVO resourceUuid=YOUR_VR_OFFERING_UUID tag=guestL3Network::YOUR_L3_NETWORK_UUID
+
