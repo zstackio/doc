@@ -186,13 +186,13 @@ Properties
      - when protocol is TCP/UDP, it's the start of port range; when protocol is ICMP, it's ICMP type
      -
      - - for TCP/UDP: 0 - 65535
-       - for ICMP: see `ICMP type and code`_
+       - for ICMP: see `ICMP type and code`_ , use '-1' to represent all types.
      - 0.6
    * - **endPort**
      - when protocol is TCP/UDP, it's the end of port range; when protocol is ICMP, it's ICMP code
      -
      - - for TCP/UDP: 0 - 65535
-       - for ICMP: see `ICMP type and code`_
+       - for ICMP: see `ICMP type and code`_, use '-1' to represent all types.
      - 0.6
    * - **allowedCidr**
      - see :ref:`allowedCidr <allowed cidr>`
