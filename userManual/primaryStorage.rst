@@ -206,7 +206,7 @@ and primary storage. Command channels are the ways ZStack management nodes commu
 depending on primary storage types, for example, it can be HTTP connections among ZStack management nodes and primary storage agents or communication
 methods provided by storage SDKs.
 
-There are there status:
+There are three status:
 
 - **Connecting**:
 
