@@ -574,8 +574,8 @@ connection.autoReconnectOnError
      - - true
        - false
 
-Whether to reconnect hosts when their status change from Disconnected to Connected. If set to true, management nodes will reconnect
-hosts whose status change from Disconnected to Connected by ping commands, in order to catch up with operations missed during hosts in
+Whether to reconnect hosts when their status change from Connected to Disconnected. If set to true, management nodes will reconnect
+hosts whose status change from Connected to Disconnected by ping commands, in order to catch up with operations missed during hosts in
 disconnected; if set to false, management nodes will not automatically reconnect them, admins may need to manually do it if necessary.
 
 .. _maintenanceMode.ignoreError:
