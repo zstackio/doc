@@ -501,7 +501,7 @@ Users can use DeleteVmNicFromSecurityGroup to delete VM nics from a security gro
 
     DeleteVmNicFromSecurityGroup securityGroupUuid=0b48770e593e400c8f54e71fd4e7f514 vmNicUuids=b429625fe2704a3e94d698ccc0fae4fb,6572ce44c3f6422d8063b0fb262cbc62,d07066c4de02404a948772e131139eb4
 
-This command executes asynchronously, it may return before rules are refreshed on rest nics in the security group.
+This command executes asynchronously, it may return before rules are refreshed on nics in the security group.
 
 Parameters
 ++++++++++
