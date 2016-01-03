@@ -37,7 +37,7 @@ A virtual router VM typically has three L3 networks:
 
 - **Management Network**:
 
-  The network that ZStack management nodes communicate to virtual router agents; eth0 in is the nic on
+  The network that ZStack management nodes communicate to virtual router agents; eth0 is the nic on
   the management network.
 
 - **Public Network**:
