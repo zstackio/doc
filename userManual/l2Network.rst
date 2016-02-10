@@ -316,6 +316,56 @@ Parameters
      -
      - 0.6
 
+Create L2VlanNetwork
+======================
+
+Admins can use CreateL2VlanNetwork to create a L2VlanNetwork. For example::
+
+    CreateL2VlanNetwork name=APPLICATION-L2 physicalInterface=eth0 vlan=100 zoneUuid=69b5be02a15742a08c1b7518e32f442a
+
+Parameters
+++++++++++
+
+.. list-table::
+   :widths: 20 40 10 20 10
+   :header-rows: 1
+
+   * - Name
+     - Description
+     - Optional
+     - Choices
+     - Since
+   * - **name**
+     - resource name, see :ref:`resource properties`
+     -
+     -
+     - 0.6
+   * - **vlan**
+     - VLAN id used to create layer 2 broadcast domain
+     -
+     - [0, 4095]
+     - 0.6
+   * - **resourceUuid**
+     - resource uuid, see :ref:`create resource`
+     - true
+     -
+     - 0.6
+   * - **description**
+     - resource description, see :ref:`resource properties`
+     - true
+     -
+     - 0.6
+   * - **zoneUuid**
+     - uuid of parent zone, see :ref:`zone <zone>`
+     -
+     -
+     - 0.6
+   * - **physicalInterface**
+     - see :ref:`physical interface <l2Network physical interface>`
+     -
+     -
+     - 0.6
+
 Delete L2 Network
 =================
 
